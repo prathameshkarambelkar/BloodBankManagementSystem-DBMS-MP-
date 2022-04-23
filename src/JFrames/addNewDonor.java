@@ -2,7 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 package JFrames;
+import java.sql.*;
+import Project.connectionProvider;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+
+
 
 /**
  *
@@ -34,16 +41,15 @@ public class addNewDonor extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         etEmailID = new javax.swing.JTextField();
         etCity = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         etCompleteAddress = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        cbBloodGroup = new javax.swing.JComboBox<>();
+        btnSaveAddNewDonor = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnResetAddNewDonor = new javax.swing.JButton();
+        btnCloseAddNewDonor = new javax.swing.JButton();
         etFullName = new javax.swing.JTextField();
         etFatherName = new javax.swing.JTextField();
         etMotherName = new javax.swing.JTextField();
@@ -54,8 +60,10 @@ public class addNewDonor extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        tvDonorId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(340, 130));
         setUndecorated(true);
         setSize(new java.awt.Dimension(700, 500));
 
@@ -83,24 +91,35 @@ public class addNewDonor extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Gender:");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 51, 51));
-        jTextField1.setText("1");
-
         etCompleteAddress.setColumns(20);
         etCompleteAddress.setRows(5);
         jScrollPane1.setViewportView(etCompleteAddress);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-" }));
+        cbBloodGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-" }));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setText("Save");
+        btnSaveAddNewDonor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnSaveAddNewDonor.setText("Save");
+        btnSaveAddNewDonor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveAddNewDonorActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setText("Reset");
+        btnResetAddNewDonor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnResetAddNewDonor.setText("Reset");
+        btnResetAddNewDonor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetAddNewDonorActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton3.setText("Close");
+        btnCloseAddNewDonor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnCloseAddNewDonor.setText("Close");
+        btnCloseAddNewDonor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseAddNewDonorActionPerformed(evt);
+            }
+        });
 
         cbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
 
@@ -115,6 +134,9 @@ public class addNewDonor extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel12.setText("Complete Address:");
+
+        tvDonorId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tvDonorId.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,26 +155,30 @@ public class addNewDonor extends javax.swing.JFrame {
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(etMobilenumber)
-                            .addComponent(etMotherName)
-                            .addComponent(etFatherName)
-                            .addComponent(etFullName)
-                            .addComponent(cbGender, 0, 160, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(etMobilenumber)
+                                    .addComponent(etMotherName)
+                                    .addComponent(etFatherName)
+                                    .addComponent(etFullName)
+                                    .addComponent(cbGender, 0, 160, Short.MAX_VALUE)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tvDonorId, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 160, Short.MAX_VALUE)
+                        .addComponent(cbBloodGroup, javax.swing.GroupLayout.Alignment.LEADING, 0, 160, Short.MAX_VALUE)
                         .addComponent(etEmailID, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(etCity, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(21, 21, 21))
@@ -162,11 +188,11 @@ public class addNewDonor extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(128, 128, 128)
-                .addComponent(jButton1)
+                .addComponent(btnSaveAddNewDonor)
                 .addGap(48, 48, 48)
-                .addComponent(jButton2)
+                .addComponent(btnResetAddNewDonor)
                 .addGap(55, 55, 55)
-                .addComponent(jButton3)
+                .addComponent(btnCloseAddNewDonor)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -175,9 +201,9 @@ public class addNewDonor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tvDonorId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -189,7 +215,7 @@ public class addNewDonor extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(etFatherName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbBloodGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -217,14 +243,82 @@ public class addNewDonor extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSaveAddNewDonor)
+                    .addComponent(btnResetAddNewDonor)
+                    .addComponent(btnCloseAddNewDonor))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    private void formComponentShow(java.awt.event.ComponentEvent evt){
+        try{
+            Connection con=connectionProvider.getCon();
+            Statement st=con.createStatement();
+            ResultSet rs = st.executeQuery("select max(donorId from donor");
+            if(rs.first())
+            {
+                int id = rs.getInt(1);
+                String str1 = String.valueOf(id);
+                tvDonorId.setText(str1);
+            }
+            else{
+                
+                tvDonorId.setText("1");
+            } 
+            
+        }
+        catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        
+        }
+    
+}
+        
+    private void btnResetAddNewDonorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetAddNewDonorActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new addNewDonor().setVisible(true);
+    }//GEN-LAST:event_btnResetAddNewDonorActionPerformed
+
+    private void btnCloseAddNewDonorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseAddNewDonorActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btnCloseAddNewDonorActionPerformed
+
+    private void btnSaveAddNewDonorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveAddNewDonorActionPerformed
+        // TODO add your handling code here:
+        String donorId=tvDonorId.getText();
+        String name = etFullName.getText();
+        String fatherName = etFatherName.getText();
+        String motherName = etMotherName.getText();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-YYY");
+        String DOB = dateFormat.format(jDateChooser1.getDate());
+        String mobileNo = etMobilenumber.getText();
+        String gender = (String)cbGender.getSelectedItem();
+        String emailId = etEmailID.getText();
+        String bloodGroup = (String)cbBloodGroup.getSelectedItem();
+        String city = etCity.getText();
+        String address = etCompleteAddress.getText();
+        
+        
+        try{
+            Connection con = connectionProvider.getCon();
+            Statement st = con.createStatement();
+            st.executeUpdate("insert into donor values(null,'"+name+"','"+fatherName+"','"+motherName+"','"+DOB+"','"+mobileNo+"','"+gender+"','"+emailId+"','"+bloodGroup+"','"+city+"','"+address+"')");
+            JOptionPane.showMessageDialog(null, "Successfully Updated");
+            setVisible(false);
+            new addNewDonor().setVisible(true);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+            
+            
+        }
+    }//GEN-LAST:event_btnSaveAddNewDonorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,14 +348,16 @@ public class addNewDonor extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new addNewDonor().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new addNewDonor().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCloseAddNewDonor;
+    private javax.swing.JButton btnResetAddNewDonor;
+    private javax.swing.JButton btnSaveAddNewDonor;
+    private javax.swing.JComboBox<String> cbBloodGroup;
     private javax.swing.JComboBox<String> cbGender;
     private javax.swing.JTextField etCity;
     private javax.swing.JTextArea etCompleteAddress;
@@ -270,10 +366,6 @@ public class addNewDonor extends javax.swing.JFrame {
     private javax.swing.JTextField etFullName;
     private javax.swing.JTextField etMobilenumber;
     private javax.swing.JTextField etMotherName;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -289,6 +381,6 @@ public class addNewDonor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel tvDonorId;
     // End of variables declaration//GEN-END:variables
 }

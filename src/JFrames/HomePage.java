@@ -30,7 +30,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        btnMenuAddNew = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
@@ -57,9 +57,14 @@ public class HomePage extends javax.swing.JFrame {
 
         jMenu6.setText("Donor");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem1.setText("Add New");
-        jMenu6.add(jMenuItem1);
+        btnMenuAddNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnMenuAddNew.setText("Add New");
+        btnMenuAddNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuAddNewActionPerformed(evt);
+            }
+        });
+        jMenu6.add(btnMenuAddNew);
         jMenu6.add(jSeparator6);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -180,6 +185,11 @@ public class HomePage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnExitAppActionPerformed
 
+    private void btnMenuAddNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuAddNewActionPerformed
+        // TODO add your handling code here:
+        new addNewDonor().setVisible(true);
+    }//GEN-LAST:event_btnMenuAddNewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,13 +226,13 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnExitApp;
     private javax.swing.JMenuItem btnLogOut;
+    private javax.swing.JMenuItem btnMenuAddNew;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
