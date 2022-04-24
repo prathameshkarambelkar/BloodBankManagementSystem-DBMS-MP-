@@ -34,7 +34,7 @@ public class HomePage extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         btnUpdateDetails = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        btnAllDonorDetails = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
@@ -77,9 +77,14 @@ public class HomePage extends javax.swing.JFrame {
         jMenu6.add(btnUpdateDetails);
         jMenu6.add(jSeparator7);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("All Donor Details");
-        jMenu6.add(jMenuItem3);
+        btnAllDonorDetails.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnAllDonorDetails.setText("All Donor Details");
+        btnAllDonorDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAllDonorDetailsActionPerformed(evt);
+            }
+        });
+        jMenu6.add(btnAllDonorDetails);
 
         jMenuBar1.add(jMenu6);
 
@@ -200,6 +205,11 @@ public class HomePage extends javax.swing.JFrame {
        new  updateDetailsDonor().setVisible(true);
     }//GEN-LAST:event_btnUpdateDetailsActionPerformed
 
+    private void btnAllDonorDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAllDonorDetailsActionPerformed
+        // TODO add your handling code here:
+        new allDonorDetails().setVisible(true);
+    }//GEN-LAST:event_btnAllDonorDetailsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -234,6 +244,7 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnAllDonorDetails;
     private javax.swing.JMenuItem btnExitApp;
     private javax.swing.JMenuItem btnLogOut;
     private javax.swing.JMenuItem btnMenuAddNew;
@@ -244,7 +255,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

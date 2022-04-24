@@ -253,11 +253,13 @@ public class addNewDonor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    
+    
     private void formComponentShow(java.awt.event.ComponentEvent evt){
         try{
             Connection con=connectionProvider.getCon();
             Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("select max(donorId from donor");
+            ResultSet rs = st.executeQuery("select max(donorId from donor)");
             if(rs.first())
             {
                 int id = rs.getInt(1);
@@ -324,6 +326,8 @@ public class addNewDonor extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -346,9 +350,11 @@ public class addNewDonor extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(addNewDonor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
+            
             new addNewDonor().setVisible(true);
         });
     }
