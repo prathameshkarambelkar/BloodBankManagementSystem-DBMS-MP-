@@ -38,7 +38,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         btnLocationHomepage = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        btnBloodGruopHomePage = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
@@ -100,9 +100,14 @@ public class HomePage extends javax.swing.JFrame {
         jMenu2.add(btnLocationHomepage);
         jMenu2.add(jSeparator3);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem5.setText("Blood Group");
-        jMenu2.add(jMenuItem5);
+        btnBloodGruopHomePage.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        btnBloodGruopHomePage.setText("Blood Group");
+        btnBloodGruopHomePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBloodGruopHomePageActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnBloodGruopHomePage);
 
         jMenuBar1.add(jMenu2);
 
@@ -220,6 +225,11 @@ public class HomePage extends javax.swing.JFrame {
         new searchBloodDonorLocation().setVisible(true);
     }//GEN-LAST:event_btnLocationHomepageActionPerformed
 
+    private void btnBloodGruopHomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBloodGruopHomePageActionPerformed
+        // TODO add your handling code here:
+        new searchBLoodDonorBloodGroup().setVisible(true);
+    }//GEN-LAST:event_btnBloodGruopHomePageActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -255,6 +265,7 @@ public class HomePage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnAllDonorDetails;
+    private javax.swing.JMenuItem btnBloodGruopHomePage;
     private javax.swing.JMenuItem btnExitApp;
     private javax.swing.JMenuItem btnLocationHomepage;
     private javax.swing.JMenuItem btnLogOut;
@@ -266,7 +277,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
