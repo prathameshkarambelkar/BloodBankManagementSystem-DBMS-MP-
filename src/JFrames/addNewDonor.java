@@ -100,7 +100,7 @@ public class addNewDonor extends javax.swing.JFrame {
         etCompleteAddress.setRows(5);
         jScrollPane1.setViewportView(etCompleteAddress);
 
-        cbBloodGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-" }));
+        cbBloodGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
 
         btnSaveAddNewDonor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSaveAddNewDonor.setText("Save");
