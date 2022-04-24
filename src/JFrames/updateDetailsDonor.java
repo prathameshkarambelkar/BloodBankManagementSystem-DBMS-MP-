@@ -308,7 +308,7 @@ public class updateDetailsDonor extends javax.swing.JFrame {
     private void btnUpdateDonorDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDonorDetailsActionPerformed
         // TODO add your handling code here:
         String donorId = etDonorIdUpdateDonorDetails.getText();
-        String name=etFullNameUpdateDonorDetails.getName();
+        String name=etFullNameUpdateDonorDetails.getText();
         String fatherName = etFatherNameUpdateDonorDetails.getText();
         String motherName = etMotherDetailsUpdateDonorDetails.getText();
         String DOB = etDateOfBirthUpdatDonorDetails.getText();
@@ -324,10 +324,14 @@ public class updateDetailsDonor extends javax.swing.JFrame {
         {
             Connection con = connectionProvider.getCon();
             Statement st = con.createStatement();
-            st.executeUpdate("update donor set name='"+name+"',fatherName='"+fatherName+"',motherName='"+motherName+"',DOB='"+DOB"',MobileNo='"+mobileNo+"',gender='"+gender+"',email='"+email+"',");
+            st.executeUpdate("update donor set name='"+name+"',fatherName='"+fatherName+"',motherName='"+motherName+"',DOB='"+DOB+"',MobileNo='"+mobileNo+"',gender='"+gender+"',email='"+email+"',bloodGroup='"+bloodGroup+"',city='"+city+"',address='"+address+"'where donorId='"+donorId+"'");
+            JOptionPane.showMessageDialog(null,"Successfully Updated Details");
+            setVisible(false);
+            new updateDetailsDonor().setVisible(true);
         }
         catch(Exception e)
         {
+            JOptionPane.showMessageDialog(null, "Connection Error");
         }
 
     }//GEN-LAST:event_btnUpdateDonorDetailsActionPerformed

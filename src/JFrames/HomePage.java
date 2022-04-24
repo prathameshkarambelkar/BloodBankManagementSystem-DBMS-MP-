@@ -32,7 +32,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         btnMenuAddNew = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btnUpdateDetails = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -67,9 +67,14 @@ public class HomePage extends javax.swing.JFrame {
         jMenu6.add(btnMenuAddNew);
         jMenu6.add(jSeparator6);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Update Details");
-        jMenu6.add(jMenuItem2);
+        btnUpdateDetails.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnUpdateDetails.setText("Update Details");
+        btnUpdateDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateDetailsActionPerformed(evt);
+            }
+        });
+        jMenu6.add(btnUpdateDetails);
         jMenu6.add(jSeparator7);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -190,6 +195,11 @@ public class HomePage extends javax.swing.JFrame {
         new addNewDonor().setVisible(true);
     }//GEN-LAST:event_btnMenuAddNewActionPerformed
 
+    private void btnUpdateDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDetailsActionPerformed
+        // TODO add your handling code here:
+       new  updateDetailsDonor().setVisible(true);
+    }//GEN-LAST:event_btnUpdateDetailsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,13 +237,13 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenuItem btnExitApp;
     private javax.swing.JMenuItem btnLogOut;
     private javax.swing.JMenuItem btnMenuAddNew;
+    private javax.swing.JMenuItem btnUpdateDetails;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
