@@ -251,7 +251,7 @@ public class addNewDonor extends javax.swing.JFrame {
                     .addComponent(btnSaveAddNewDonor)
                     .addComponent(btnResetAddNewDonor)
                     .addComponent(btnCloseAddNewDonor))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         pack();
