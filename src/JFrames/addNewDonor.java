@@ -308,11 +308,12 @@ public class addNewDonor extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Connection con=connectionProvider.getCon();
-            Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("select donorId from donor");
+            Statement st=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery("select max(donorId) from donor");
             if(rs.first())
             {
                 int id = rs.getInt(1);
+                id += 1;
                 String str1 = String.valueOf(id);
                 tvDonorId.setText(str1);
             }

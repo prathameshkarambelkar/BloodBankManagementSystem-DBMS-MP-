@@ -40,7 +40,7 @@ public class HomePage extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         btnBloodGruopHomePage = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        btnIncreaseMenu = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem7 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
@@ -113,9 +113,14 @@ public class HomePage extends javax.swing.JFrame {
 
         jMenu3.setText("Stock");
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem6.setText("Increase");
-        jMenu3.add(jMenuItem6);
+        btnIncreaseMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        btnIncreaseMenu.setText("Increase");
+        btnIncreaseMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIncreaseMenuActionPerformed(evt);
+            }
+        });
+        jMenu3.add(btnIncreaseMenu);
         jMenu3.add(jSeparator1);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
@@ -230,6 +235,11 @@ public class HomePage extends javax.swing.JFrame {
         new searchBLoodDonorBloodGroup().setVisible(true);
     }//GEN-LAST:event_btnBloodGruopHomePageActionPerformed
 
+    private void btnIncreaseMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncreaseMenuActionPerformed
+        // TODO add your handling code here:
+        new stockIncrease().setVisible(true);
+    }//GEN-LAST:event_btnIncreaseMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,6 +277,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenuItem btnAllDonorDetails;
     private javax.swing.JMenuItem btnBloodGruopHomePage;
     private javax.swing.JMenuItem btnExitApp;
+    private javax.swing.JMenuItem btnIncreaseMenu;
     private javax.swing.JMenuItem btnLocationHomepage;
     private javax.swing.JMenuItem btnLogOut;
     private javax.swing.JMenuItem btnMenuAddNew;
@@ -277,7 +288,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
