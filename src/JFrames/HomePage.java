@@ -42,7 +42,7 @@ public class HomePage extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         btnIncreaseMenu = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        btnDecreaseHomepage = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -123,14 +123,14 @@ public class HomePage extends javax.swing.JFrame {
         jMenu3.add(btnIncreaseMenu);
         jMenu3.add(jSeparator1);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        jMenuItem7.setText("Decrease");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        btnDecreaseHomepage.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        btnDecreaseHomepage.setText("Decrease");
+        btnDecreaseHomepage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                btnDecreaseHomepageActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem7);
+        jMenu3.add(btnDecreaseHomepage);
         jMenu3.add(jSeparator2);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
@@ -186,9 +186,10 @@ public class HomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void btnDecreaseHomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecreaseHomepageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+       new stockDecrease().setVisible(true);
+    }//GEN-LAST:event_btnDecreaseHomepageActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
@@ -276,6 +277,7 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnAllDonorDetails;
     private javax.swing.JMenuItem btnBloodGruopHomePage;
+    private javax.swing.JMenuItem btnDecreaseHomepage;
     private javax.swing.JMenuItem btnExitApp;
     private javax.swing.JMenuItem btnIncreaseMenu;
     private javax.swing.JMenuItem btnLocationHomepage;
@@ -288,7 +290,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
