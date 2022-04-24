@@ -43,6 +43,11 @@ public class allDonorDetails extends javax.swing.JFrame {
         btnCloseAllDonorDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel1.setText("All Donor Details");
@@ -58,6 +63,11 @@ public class allDonorDetails extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableAllDonorDetails.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tableAllDonorDetailsComponentShown(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableAllDonorDetails);
 
         btnPrint.setText("Print");
@@ -121,17 +131,7 @@ public class allDonorDetails extends javax.swing.JFrame {
      *
      * @param evt
      */
-    public void formComponentShown(java.awt.event.ComponentEvent evt){
-        try {
-            Connection con = connectionProvider.getCon();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select *from donor");
-            tableAllDonorDetails.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-            tableAllDonorDetails.setModel(DbUtils.resultSetToTableModel(rs));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
+
     
     
     private void btnCloseAllDonorDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseAllDonorDetailsActionPerformed
@@ -147,6 +147,24 @@ public class allDonorDetails extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);        
         }
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void tableAllDonorDetailsComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableAllDonorDetailsComponentShown
+        // TODO add your handling code here:
+ 
+    }//GEN-LAST:event_tableAllDonorDetailsComponentShown
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+                try {
+            Connection con = connectionProvider.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select *from donor");
+            tableAllDonorDetails.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            tableAllDonorDetails.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        } 
+    }//GEN-LAST:event_formComponentShown
 
     /**
      * @param args the command line arguments

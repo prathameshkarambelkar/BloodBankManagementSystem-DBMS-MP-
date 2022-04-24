@@ -36,7 +36,7 @@ public class HomePage extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
         btnAllDonorDetails = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        btnLocationHomepage = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -90,9 +90,14 @@ public class HomePage extends javax.swing.JFrame {
 
         jMenu2.setText("Search Blood Donor");
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem4.setText("Location");
-        jMenu2.add(jMenuItem4);
+        btnLocationHomepage.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        btnLocationHomepage.setText("Location");
+        btnLocationHomepage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocationHomepageActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnLocationHomepage);
         jMenu2.add(jSeparator3);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
@@ -210,6 +215,11 @@ public class HomePage extends javax.swing.JFrame {
         new allDonorDetails().setVisible(true);
     }//GEN-LAST:event_btnAllDonorDetailsActionPerformed
 
+    private void btnLocationHomepageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocationHomepageActionPerformed
+        // TODO add your handling code here:
+        new searchBloodDonorLocation().setVisible(true);
+    }//GEN-LAST:event_btnLocationHomepageActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -246,6 +256,7 @@ public class HomePage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnAllDonorDetails;
     private javax.swing.JMenuItem btnExitApp;
+    private javax.swing.JMenuItem btnLocationHomepage;
     private javax.swing.JMenuItem btnLogOut;
     private javax.swing.JMenuItem btnMenuAddNew;
     private javax.swing.JMenuItem btnUpdateDetails;
@@ -255,7 +266,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;

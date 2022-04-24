@@ -66,6 +66,11 @@ public class addNewDonor extends javax.swing.JFrame {
         setLocation(new java.awt.Point(340, 130));
         setUndecorated(true);
         setSize(new java.awt.Dimension(700, 500));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("ADD NEW DONOR");
@@ -255,30 +260,7 @@ public class addNewDonor extends javax.swing.JFrame {
     
     
     
-    private void formComponentShow(java.awt.event.ComponentEvent evt){
-        try{
-            Connection con=connectionProvider.getCon();
-            Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("select max(donorId from donor)");
-            if(rs.first())
-            {
-                int id = rs.getInt(1);
-                String str1 = String.valueOf(id);
-                tvDonorId.setText(str1);
-            }
-            else{
-                
-                tvDonorId.setText("1");
-            } 
-            
-        }
-        catch(SQLException e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        
-        }
-    
-}
+
         
     private void btnResetAddNewDonorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetAddNewDonorActionPerformed
         // TODO add your handling code here:
@@ -321,6 +303,30 @@ public class addNewDonor extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btnSaveAddNewDonorActionPerformed
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        try{
+            Connection con=connectionProvider.getCon();
+            Statement st=con.createStatement();
+            ResultSet rs = st.executeQuery("select donorId from donor");
+            if(rs.first())
+            {
+                int id = rs.getInt(1);
+                String str1 = String.valueOf(id);
+                tvDonorId.setText(str1);
+            }
+            else{
+                
+            } 
+            
+        }
+        catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        
+        }
+    }//GEN-LAST:event_formComponentShown
 
     /**
      * @param args the command line arguments
