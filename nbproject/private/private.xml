@@ -5,10 +5,15 @@
         <group>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/stockDecrease.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/deleteDonor.java</file>
+            <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/allDonorDetails.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/addNewDonor.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/stockDetails.java</file>
+            <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/searchBLoodDonorBloodGroup.java</file>
+            <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/searchBloodDonorLocation.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/Project/connectionProvider.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/HomePage.java</file>
+            <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/updateDetailsDonor.java</file>
+            <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/stockIncrease.java</file>
             <file>file:/E:/DBMS%20MiniProject/BloodBankManagementSystem-DBMS(MP)/src/JFrames/Login.java</file>
         </group>
     </open-files>
