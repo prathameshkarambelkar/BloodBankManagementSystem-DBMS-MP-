@@ -62,7 +62,7 @@ public class addNewDonor extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         tvDonorId = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(340, 130));
@@ -106,17 +106,22 @@ public class addNewDonor extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Gender:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 277, 94, -1));
-        getContentPane().add(etEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 92, 160, -1));
-        getContentPane().add(etCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 166, 160, -1));
+        getContentPane().add(etEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 160, -1));
+        getContentPane().add(etCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 160, -1));
 
         etCompleteAddress.setColumns(20);
         etCompleteAddress.setRows(5);
         jScrollPane1.setViewportView(etCompleteAddress);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 203, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, -1));
 
         cbBloodGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-" }));
-        getContentPane().add(cbBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(513, 129, 160, -1));
+        cbBloodGroup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbBloodGroupActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 160, -1));
 
         btnSaveAddNewDonor.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnSaveAddNewDonor.setText("Save");
@@ -175,8 +180,8 @@ public class addNewDonor extends javax.swing.JFrame {
         getContentPane().add(tvDonorId, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 57, 36, 17));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JFrames/BBMS ICON/all page background image.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JFrames/BBMS ICON/all page background image.png"))); // NOI18N
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +258,10 @@ public class addNewDonor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formComponentShown
 
+    private void cbBloodGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbBloodGroupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbBloodGroupActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -309,7 +318,7 @@ public class addNewDonor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

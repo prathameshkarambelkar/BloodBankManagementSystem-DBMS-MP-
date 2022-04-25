@@ -41,6 +41,7 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
         btnPrintSearchBloodDonorBloodGroup = new javax.swing.JButton();
         btnCloseSearchBloodDonorBLoodGroup = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(340, 170));
@@ -50,18 +51,24 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("Search Blood Donor(Blood Group)");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 662, 10));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Blood Group:  ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
 
         etBloodGroupSearchBloodDonor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 etBloodGroupSearchBloodDonorKeyReleased(evt);
             }
         });
+        getContentPane().add(etBloodGroupSearchBloodDonor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 173, -1));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 662, 10));
 
         tableSearchBloodDonorBloodGroup.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,6 +83,8 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableSearchBloodDonorBloodGroup);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 662, 330));
+
         btnPrintSearchBloodDonorBloodGroup.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnPrintSearchBloodDonorBloodGroup.setText("Print");
         btnPrintSearchBloodDonorBloodGroup.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +92,7 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
                 btnPrintSearchBloodDonorBloodGroupActionPerformed(evt);
             }
         });
+        getContentPane().add(btnPrintSearchBloodDonorBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
 
         btnCloseSearchBloodDonorBLoodGroup.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnCloseSearchBloodDonorBLoodGroup.setText("Close");
@@ -91,67 +101,11 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
                 btnCloseSearchBloodDonorBLoodGroupActionPerformed(evt);
             }
         });
+        getContentPane().add(btnCloseSearchBloodDonorBLoodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, -1));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 662, 11));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(169, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(125, 125, 125))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jSeparator1)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jSeparator2)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(etBloodGroupSearchBloodDonor, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(btnPrintSearchBloodDonorBloodGroup)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCloseSearchBloodDonorBLoodGroup)
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator3)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(etBloodGroupSearchBloodDonor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPrintSearchBloodDonorBloodGroup)
-                    .addComponent(btnCloseSearchBloodDonorBLoodGroup))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/JFrames/BBMS ICON/all page background image.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -229,6 +183,7 @@ public class searchBLoodDonorBloodGroup extends javax.swing.JFrame {
     private javax.swing.JTextField etBloodGroupSearchBloodDonor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
